@@ -9,7 +9,7 @@
     "author": "Mackensie Alvarez",
     "version": {
         "Major": 1,
-        "Minor": 4,
+        "Minor": 5,
         "Patch": 0
     },
     "instanceNameFormat": "Import variables to YAML",
@@ -38,10 +38,7 @@
             "helpMarkDown": "This should be the node name that will be holding all of the secrets"
         }
     ],
-
     "dataSourceBindings": [],
-
-
     "execution": {
         "Node10": {
             "target": "index.js"
