@@ -41,12 +41,12 @@ async function run() {
         const fs = require('fs');
         const content = yaml.safeLoad(fs.readFileSync(filePath, 'utf8'));
         const arrayContent = Object.entries(content);
+        
         //Make main node an array
         content[mainNode] = [];
 
         finalList.forEach(function (item) {
-            let a = { 'key': item.name, 'value': item.value };
-            content[mainNode].push(a);
+            content[mainNode].push({ 'name': item.name, 'value': item.value });
         });
 
         console.log('final YAML', content);
@@ -55,6 +55,7 @@ async function run() {
         // Create the file
         let yamlStr = yaml.safeDump(content);
         tl.writeFile(filePath, yamlStr, 'utf8');
+
         console.log('Saved YAML to:', filePath);
 
     }
